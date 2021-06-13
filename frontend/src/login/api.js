@@ -77,7 +77,12 @@ export const deleteUser = async (username, cb) => {
 				 {withCredentials: true}
 		 )
 	 } catch (err) {
-		 console.log("[api:login] err msg:", err.message)
+		 console.log(err.messages)
+		 console.log(err)
+		 console.log("[api:login] err message:", err.response.message)
+		 console.log("[api:login] err status:", err.response.status)
+		 console.log("[api:login] err msg:", err.response.msg)
+
 			return err.response
 	 }
 }

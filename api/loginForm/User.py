@@ -36,6 +36,7 @@ class User:
 		if user and pbkdf2_sha256.verify(formData['password'], user['password']):
 			return self.startSession(user)
 
+# 		print(RESPONSES["ERR_INCORRECT_PWD_OR_USERNAME"])
 		return RESPONSES["ERR_INCORRECT_PWD_OR_USERNAME"]
 
 	def signup(self, user):
