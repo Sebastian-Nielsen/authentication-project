@@ -23,9 +23,7 @@ def make_session_permanent():
 @loginForm_blueprint.route("/signup", methods=["POST"])
 def signup():
 	user = request.get_json(force=False, silent=False, cache=True)
-	print()
-	print("We received a signup request: " + str(user))
-	print()
+	print("[/signup] formData" + str(user))
 	if user is None:
 		return "bad", 666
 	return User().signup(user)
