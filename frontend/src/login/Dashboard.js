@@ -18,18 +18,9 @@ class Dashboard extends Component {
 
 						<AuthConsumer>
 							{ ({ username, dummy })  =>
-									<div>
-										<Link to="/user">
-											Goto User
-										</Link>
-										<h1>Dashboard </h1>
-										{JSON.stringify({ username, dummy })}
-										<Link to="/about">
-											Goto about
-										</Link>
-										<Link to="/">
-											Goto home
-										</Link>
+									<div className="component">
+										<h1>Dashboard</h1>
+										<p>You are logged in as: {JSON.stringify({ username, dummy })}</p>
 									</div>
 							}
 						</AuthConsumer>

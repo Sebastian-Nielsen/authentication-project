@@ -10,6 +10,7 @@ export default class nav extends Component {
 				<nav id="navigation">
 					<Link to="/" className="link">Home</Link>
 					<Link to="/dashboard" className="link">Dashboard</Link>
+					<Link to="/about" className="link">About</Link>
 				</nav>
 		)
 	}

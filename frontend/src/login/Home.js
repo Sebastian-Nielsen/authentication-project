@@ -33,16 +33,16 @@ const Home = () => {
 											<Link to="/about">
 												<button className="type-2 secondary"> About </button>
 											</Link>
-											<Link to="/login">
-												<button className="type-2 secondary"> Login </button>
-											</Link>
+											{/*<Link to="/login">*/}
+											{/*	<button className="type-2 secondary"> Login </button>*/}
+											{/*</Link>*/}
 											<button className="type-2 secondary" onClick={authContext.logout}> Sign out </button>
 										</div>
 
 										<div id="registered-users" className="component">
-											<p>Click on a user to remove the user from the database</p>
 											<button className="type-2 secondary" onClick={insertTenUsers}> Insert 10 random users </button>
 											<button className="type-2 secondary" onClick={removeAllUsers}> Remove all users </button>
+											<p>Click on a user to remove the user from the database</p>
 											<Resource
 													path="/loginForm/fetchAllDataFromAllUsers"
 													render={data => {

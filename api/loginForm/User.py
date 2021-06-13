@@ -33,7 +33,6 @@ class User:
 
 		user = userDataCollection.find_one(formData['username'])
 
-
 		if user and pbkdf2_sha256.verify(formData['password'], user['password']):
 			return self.startSession(user)
 

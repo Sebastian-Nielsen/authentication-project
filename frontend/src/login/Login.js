@@ -13,8 +13,7 @@ const Login = () => {
 	const authContext = useContext(AuthContext)
 	const [username, setUsername] = useState("sebastian")
 	const [password, setPassword] = useState("123")
-	// const [username, setUsername] = useState("")
-	// const [password, setPassword] = useState("")
+
 
 	const onLoginSubmit = (event, username, password) => {
 		event.preventDefault()

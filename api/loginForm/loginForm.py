@@ -2,7 +2,7 @@ from flask import Blueprint, request
 from flask import jsonify
 import pymongo
 from flask import Blueprint, request, session
-
+from passlib.hash import pbkdf2_sha256
 from .User import User
 import random
 
@@ -53,7 +53,7 @@ def logout():
 def insertTenUsers():
 	for i in range(10):
 		try:
-			userDataCollection.insert({"_id": f"bob_{i}", "username": f"bob_{i}", "email": f"bob_{i}@mail.dk", "unecrypted_password": f"{i}"})
+			userDataCollection.insert({"_id": f"bob_{i}", "username": f"bob_{i}", "email": f"bob_{i}@mail.dk", "unecrypted_password": f"{i}", "password": pbkdf2_sha256.encrypt(f"{i}")})
 		except:
 			pass
 	return "ok", 200

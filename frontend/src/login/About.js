@@ -10,12 +10,9 @@ class About extends Component {
 		return (
 				<AuthConsumer>
 					{ ({ username, dummy })  =>
-							<div>
+							<div className="component">
 								<h1>About </h1>
-								{JSON.stringify({ username, dummy })}
-								<button onClick={() => { this.props.history.push("/") }}>
-									Goto home
-								</button>
+								<p>A simple authentication page</p>
 							</div>
 					}
 				</AuthConsumer>
