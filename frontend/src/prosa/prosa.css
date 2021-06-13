@@ -1,0 +1,68 @@
+#prosa {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: antiquewhite;
+}
+#prosa .prosaPost {
+  position: relative;
+  display: flex;
+  background: rgba(255, 165, 0, 0.2);
+  margin: 4px 0;
+}
+#prosa .prosaPost:hover .overlay-delete-but {
+  opacity: 1;
+}
+#prosa .prosaPost > div {
+  padding: 5px;
+}
+#prosa .prosaPost .overlay-delete-but {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  padding: 0 !important;
+  transition: opacity 0.1s;
+  cursor: pointer;
+}
+#prosa .prosaPost .overlay-delete-but > img {
+  width: 80%;
+  height: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#prosa .prosaPost .date {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid black;
+  max-width: 90px;
+}
+#prosa .prosaPost .date > div {
+  padding: 5px 0;
+  text-align: center;
+}
+#prosa .prosaPost .info {
+  display: flex;
+  flex-direction: column;
+}
+#prosa .prosaPost .info .title {
+  margin: 2px;
+}
+#prosa .prosaPost .info .details {
+  margin: auto 0 5px 0;
+}
+#prosa .spinner {
+  display: flex;
+  justify-content: center;
+}
+
+/*# sourceMappingURL=prosa.css.map */

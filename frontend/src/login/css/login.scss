@@ -1,0 +1,83 @@
+
+#login {
+	.svg-container {
+		height: 150px;
+		width: 160px;
+	}
+	svg {
+		z-index: 1;
+		fill: rgba(white,.9);
+		height: 100%;
+		width: 100%;
+		object-fit: scale-down;
+		stroke-width: 5px;
+		//background: url(http://goo.gl/vyAs27) no-repeat scroll 0 0;
+	}
+
+}
+
+#login, #register {
+	width: 100%;
+	height: 100%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	form {
+		flex-grow: 0;
+		flex-shrink: 0;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		.field {
+			min-width: 350px;
+			margin: 10px 10px;
+			height: 20px;
+			background: rgba(0,0,0,0.1);
+			&:hover {
+				box-shadow: 0 0 4px rgba(black,0.1);
+			}
+		}
+		.buttons {
+			font-size: .6rem;
+		}
+	}
+	//.btn {
+	//	flex: 0 0 113px;
+	//	margin: 10px 10px;
+	//	font-family: $font;
+	//	color: $text-color;
+	//	transition: .25s;
+	//	padding: .4rem;
+	//	border-radius: $roundness;
+	//
+	//	&:hover {
+	//		color: $bg-color;
+	//		background: $text-color;
+	//		outline: none;
+	//	}
+	//}
+	.vsplit {
+		display: flex;
+		justify-content: space-around;
+	}
+	.center {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.svg-container {
+		height: 180px;
+		width: 200px;
+	}
+	svg {
+		height: 100%;
+		width: 100%;
+		max-height: 100%;
+		max-width: 100%;
+		object-fit: scale-down;
+		user-select: none;
+		-webkit-user-drag: none;
+	}
+}

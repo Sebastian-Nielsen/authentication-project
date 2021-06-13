@@ -1,0 +1,412 @@
+@import "https://fonts.googleapis.com/css2?family=Fira+Code&family=IBM+Plex+Sans:wght@600&family=Inconsolata&family=Roboto+Mono&family=Source+Code+Pro&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Oxygen&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Nunito&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Itim&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Comfortaa&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap";
+a, a:hover, a:visited, a:link, a:active, a:-webkit-any-link {
+  color: white;
+  text-decoration: none;
+  text-underline: none;
+  outline: none;
+}
+
+:root {
+  --roundness: 0.25rem;
+  --font: "Roboto Mono";
+  scroll-padding-top: 2rem;
+}
+
+@font-face {
+  font-family: "Shindler";
+  src: url("../../fonts/Shindler.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+.flex-row-3-1 {
+  display: flex;
+}
+.flex-row-3-1 > :nth-child(1) {
+  flex: 3;
+}
+.flex-row-3-1 > :nth-child(2) {
+  flex: 1;
+}
+
+#navigation {
+  display: flex;
+  background: #40E3D5;
+  height: 3.5rem;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 2px 14px black;
+}
+#navigation a.link {
+  min-width: 85px;
+  width: 200px;
+  height: 100%;
+  font-size: 1.6rem;
+  color: white;
+  -webkit-text-stroke: 0.01rem black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid rgba(0, 0, 0, 0.1);
+}
+#navigation a.link:hover {
+  background: rgba(0, 0, 0, 0.2);
+  transition: background 0.2s;
+}
+
+div.component {
+  background: rgba(0, 0, 0, 0.15);
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 1rem;
+}
+
+div#registered-users table {
+  border-collapse: separate;
+  border-spacing: 50px 0;
+}
+div#registered-users tr:hover > td {
+  color: #F07656;
+  cursor: pointer;
+}
+
+#login .svg-container {
+  height: 150px;
+  width: 160px;
+}
+#login svg {
+  z-index: 1;
+  fill: rgba(255, 255, 255, 0.9);
+  height: 100%;
+  width: 100%;
+  object-fit: scale-down;
+  stroke-width: 5px;
+}
+
+#login, #register {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#login form, #register form {
+  flex-grow: 0;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#login form .field, #register form .field {
+  min-width: 350px;
+  margin: 10px 10px;
+  height: 20px;
+  background: rgba(0, 0, 0, 0.1);
+}
+#login form .field:hover, #register form .field:hover {
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+}
+#login form .buttons, #register form .buttons {
+  font-size: 0.6rem;
+}
+#login .vsplit, #register .vsplit {
+  display: flex;
+  justify-content: space-around;
+}
+#login .center, #register .center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#login .svg-container, #register .svg-container {
+  height: 180px;
+  width: 200px;
+}
+#login svg, #register svg {
+  height: 100%;
+  width: 100%;
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: scale-down;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+#register form {
+  position: relative;
+}
+#register form > h2 {
+  position: absolute;
+  top: -60px;
+  left: 0;
+}
+#register svg {
+  z-index: 1;
+  fill: rgba(255, 255, 255, 0.9);
+  height: auto;
+  width: 200px;
+  object-fit: scale-down;
+  stroke-width: 5px;
+}
+
+#market {
+  display: flex;
+  flex-direction: column;
+  max-width: 1050px;
+  margin: 0 auto;
+}
+#market h1 {
+  font-family: Shindler, serif;
+  font-size: 2rem;
+}
+#market hr {
+  margin: 1em 0;
+  padding: 0;
+  border: 1px solid #40e3d5;
+  height: 5px;
+  width: 100%;
+}
+#market > * {
+  flex: 1;
+}
+#market .toolbar {
+  display: flex;
+  flex-direction: column;
+  -webkit-border-top-left-radius: 10% !important;
+}
+#market .toolbar .btn-container {
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+  background: #39FAB3;
+  margin-bottom: 0.1rem;
+}
+#market .toolbar .collapsibles {
+  background: #39FAB3;
+  padding: 10px;
+}
+#market .toolbar .collapsibles > :not(.active) {
+  font-size: 0;
+  margin: 0;
+  opacity: 0;
+  padding: 0;
+  transition: opacity 0.25s, font-size 0.5s 0.25s, margin 0.5s 0.25s, padding 0.5s 0.25s;
+}
+#market .toolbar .collapsibles > .active {
+  border-color: #39FAB3;
+  transition: font-size 0.25s, margin 0.25s, padding 0.25s, opacity 0.5s 0.25s;
+}
+#market .content {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  background: #39FAB3;
+  margin-top: 0.1rem;
+  border-bottom-left-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+}
+
+#card {
+  flex: 1 0 195px;
+  max-width: 195px;
+  height: 400px;
+  background: #3b6a78;
+  margin: 0.5rem;
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+#card .img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+#card .img-container img {
+  border-radius: 1.5rem 1.5rem 0 0;
+  flex-shrink: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+#notificationCenter {
+  display: grid;
+  position: fixed;
+  right: 1rem;
+  top: 1rem;
+  gap: 1rem;
+}
+#notificationCenter .notif {
+  display: grid;
+  grid-template-columns: min-content auto min-content;
+  position: relative;
+  width: 350px;
+  z-index: 9999999;
+  user-select: none;
+  border-radius: 1.5rem;
+  border-width: 0.25rem;
+  color: #40e3d5;
+  background: #39FAB3;
+}
+#notificationCenter .notif:hover {
+  cursor: pointer;
+  background: #61dafb !important;
+}
+#notificationCenter .notif.error {
+  background: #F07656;
+  color: white;
+}
+#notificationCenter .notif .message {
+  padding: 1rem 1rem 1rem 0;
+}
+#notificationCenter .notif .message .title {
+  color: #40e3d5;
+  font-size: 0.75em;
+  opacity: 0.5;
+  line-height: 0.75rem;
+}
+#notificationCenter .notif .icon {
+  filter: invert(17%) sepia(8%) saturate(433%) hue-rotate(177deg) brightness(90%) contrast(86%);
+  object-fit: scale-down;
+  opacity: 0.5;
+  padding: 1rem;
+  display: grid;
+  align-items: center;
+  text-align: center;
+  font-size: 1.25rem;
+}
+#notificationCenter .notif .icon img {
+  height: 25px;
+  width: 25px;
+}
+
+html, body {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto Mono", serif;
+  font-size: 18px;
+  background: #40e3d5;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 0, 0.5) 200%), radial-gradient(circle, #39FAB3 0%, #40e3d5 250%);
+  color: white;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+html ::selection, body ::selection {
+  background: rgba(240, 118, 86, 0.9);
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+button, .btn {
+  font-family: "Fira Code";
+  font-size: 1.5em;
+  cursor: pointer;
+  outline-color: #F07656;
+  min-width: 7.5rem;
+  background: rgba(0, 0, 0, 0);
+  color: white;
+}
+button.active, .btn.active {
+  background: #39FAB3;
+  color: black;
+  border-color: #39FAB3;
+}
+button.type-accent, .btn.type-accent {
+  background: #F07656;
+  color: white;
+  border: 0.2rem solid #F07656;
+  border-radius: 0.5rem;
+}
+button.type-accent:hover, .btn.type-accent:hover {
+  text-shadow: 0 0 1px white;
+  box-shadow: 0 0 10px 1px #F07656;
+}
+button.type-2, .btn.type-2 {
+  background: rgba(0, 0, 0, 0.1);
+  color: white;
+  border-radius: 0.5rem;
+  padding: 0.7rem;
+  margin: 0.5rem;
+  border: none;
+}
+button.type-2.primary, .btn.type-2.primary {
+  background: white;
+  font-size: 1.6em;
+  color: #40e3d5;
+}
+button.type-2.primary:hover, .btn.type-2.primary:hover {
+  text-shadow: 0 0 1px white;
+  box-shadow: 0 0 10px 1px white;
+  background: white;
+  color: #40e3d5;
+}
+button.type-2.secondary:hover, .btn.type-2.secondary:hover {
+  text-shadow: 0 0 1px white;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
+  color: white;
+}
+button.type-1, .btn.type-1 {
+  border-radius: 1.5rem;
+  border: 0.2rem solid white;
+  padding: 0.7rem;
+  margin: 0.5rem;
+}
+button.type-1:hover, .btn.type-1:hover {
+  text-shadow: 0 0 1px #40e3d5;
+  box-shadow: 0 0 10px 1px white;
+}
+button.type-1.primary, .btn.type-1.primary {
+  background: white;
+  color: #40e3d5;
+}
+button.type-1.secondary, .btn.type-1.secondary {
+  background: rgba(57, 250, 179, 0);
+  color: white;
+}
+
+form input {
+  border-radius: 0.3rem;
+  font-size: 1rem;
+  line-height: 1rem;
+  outline: none;
+  border: none;
+  padding: 1rem;
+  font-family: "Fira Code";
+  color: white;
+}
+form input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  /* Light grey */
+  border-top: 16px solid #3498db;
+  /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

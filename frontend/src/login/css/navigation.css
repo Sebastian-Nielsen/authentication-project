@@ -1,0 +1,11 @@
+nav#navigation {
+  display: flex;
+  background: black;
+  margin-bottom: 0.5rem;
+}
+nav#navigation > * {
+  width: 50px;
+  height: 25px;
+}
+
+/*# sourceMappingURL=navigation.css.map */

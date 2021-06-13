@@ -1,0 +1,135 @@
+@import "./resetStyleAgent";
+@import "./global/variables";
+@import "./global/classes";
+
+@import "./navigation";
+@import "./components";
+
+@import "./login";
+@import "./register";
+@import "./market";
+@import "./card";
+@import "./notificationCenter";
+
+html,body {   // Global css
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto Mono", serif;
+  font-size: 18px;
+  background: $bg-color;
+  background: $bg-gradient;
+  color: $text-color;
+  -webkit-user-drag: none;
+  user-select: none;
+  ::selection{ background: rgba($accent-color,0.9); }
+}
+#root {
+	width: 100%;
+  height: 100%;
+}
+
+button, .btn {
+  font-family: $font;
+  font-size: 1.5em;
+  cursor: pointer;
+  outline-color: $accent-color;
+  min-width: 7.5rem;
+  background: rgba(black,0);
+  color: $text-color;
+  &.active {
+    background: $interact-color;
+    color: black;
+    border-color: $interact-color;
+  }
+	&.type-accent {
+    background: $accent-color;//rgba($accent-color,0.3);
+    color: $text-color;
+    //color: $accent-color;
+    border: .2rem solid $accent-color;
+    border-radius: .5rem;
+    &:hover {
+      text-shadow: 0 0 1px white;
+      box-shadow: 0 0 10px 1px $accent-color;
+	 }
+  }
+	&.type-2 {
+    background: rgba(black,0.1);
+    color: $text-color;
+    border-radius: .5rem;
+    padding: .7rem;
+    margin: .5rem;
+    border: none;
+		&.primary {
+      background: $text-color;
+      font-size: 1.6em;
+      color: $bg-color;
+      &:hover {
+        text-shadow: 0 0 1px white;
+        box-shadow: 0 0 10px 1px $text-color;
+        background: $text-color;
+        color: $bg-color;
+      }
+    }
+    &.secondary {
+      &:hover {
+        text-shadow: 0 0 1px white;
+        box-shadow: 0 0 10px 1px rgba(black,0.1);
+        color: $text-color;
+      }
+    }
+  }
+  &.type-1 {
+    border-radius: $roundness;
+    border: .2rem solid $text-color;
+    padding: .7rem;
+    margin: .5rem;
+    &:hover {
+      text-shadow: 0 0 1px $bg-color;
+      box-shadow: 0 0 10px 1px $text-color;
+    }
+    &.primary {
+      background: white;
+      color: $bg-color;
+    }
+    &.secondary {
+      background: rgba($sub-d-color, 0);
+      color: $text-color;
+    }
+  }
+}
+
+form {
+  input {
+    border-radius: 0.3rem;
+    font-size: 1rem;
+    line-height: 1rem;
+    outline: none;
+    border: none;
+    padding: 1rem;
+    font-family: $font;
+    color: $text-color;
+	  &::placeholder {
+      color: rgba($text-color,0.6);
+    }
+  }
+}
+
+
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+

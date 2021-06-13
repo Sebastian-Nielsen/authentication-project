@@ -1,0 +1,11 @@
+.flex-row-3-1 {
+  display: flex;
+}
+.flex-row-3-1 > :nth-child(1) {
+  flex: 3;
+}
+.flex-row-3-1 > :nth-child(2) {
+  flex: 1;
+}
+
+/*# sourceMappingURL=classes.css.map *

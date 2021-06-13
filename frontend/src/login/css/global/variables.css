@@ -1,0 +1,23 @@
+@import "https://fonts.googleapis.com/css2?family=Fira+Code&family=IBM+Plex+Sans:wght@600&family=Inconsolata&family=Roboto+Mono&family=Source+Code+Pro&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Oxygen&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Nunito&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Itim&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Comfortaa&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap";
+:root {
+  --roundness: 0.25rem;
+  --font: "Roboto Mono";
+  scroll-padding-top: 2rem;
+}
+
+@font-face {
+  font-family: "Shindler";
+  src: url("../../../fonts/Shindler.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*# sourceMappingURL=variables.css.map */

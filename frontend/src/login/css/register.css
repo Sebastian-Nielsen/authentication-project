@@ -1,0 +1,16 @@
+#register form {
+  position: relative;
+}
+#register form > h2 {
+  position: absolute;
+  top: -60px;
+  left: 0;
+}
+#register svg {
+  height: auto;
+  width: 200px;
+  object-fit: scale-down;
+  stroke-width: 5px;
+}
+
+/*# sourceMappingURL=register.css.map */

@@ -1,0 +1,40 @@
+$font: "Fira Code";
+
+$sub-d-color: #39FAB3;  // # 22222
+$sub-c-color: #40e3d5;
+$sub-b-color: #40E3D5;  // # 22222
+$sub-a-color: #3DBCD9;  // # 22222
+
+$bg-color: $sub-c-color;
+$bg-gradient: radial-gradient(circle, rgba(black,0) 0%, rgba(yellow,0.5) 200%),
+							radial-gradient(circle, $sub-d-color 0%, $bg-color 250%);
+
+$text-color: white;
+
+
+$accent-color: #F07656;
+
+$btn-color: $sub-d-color;
+$interact-color: $sub-d-color;
+
+//$sub-color: #646669;
+//$text-color: #d1d0c5;
+$error-color: $accent-color;
+$error-extra-color: #7e2a33;
+$colorful-error-color: #ca4754;
+$colorful-error-extra-color: #7e2a33;
+$roundness: 1.5rem;
+
+
+@import "https://fonts.googleapis.com/css2?family=Fira+Code&family=IBM+Plex+Sans:wght@600&family=Inconsolata&family=Roboto+Mono&family=Source+Code+Pro&display=swap";@import"https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap";@import"https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap";@import"https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap";@import"https://fonts.googleapis.com/css2?family=Oxygen&display=swap";@import"https://fonts.googleapis.com/css2?family=Nunito&display=swap";@import"https://fonts.googleapis.com/css2?family=Itim&display=swap";@import"https://fonts.googleapis.com/css2?family=Comfortaa&display=swap";@import"https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap";:root {
+	--roundness: 0.25rem;
+	--font: "Roboto Mono";
+	scroll-padding-top: 2rem
+}
+
+@font-face {
+	font-family: "Shindler";
+	src: url("../../fonts/Shindler.ttf") format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}

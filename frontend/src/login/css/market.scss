@@ -1,0 +1,72 @@
+
+//a {
+//	text-decoration: underline;
+//	text-underline-offset: 1px;
+//	color: $interact-color;
+//}
+
+#market {
+	display: flex;
+	flex-direction: column;
+
+	max-width: 1050px;
+	margin: 0 auto;
+
+	h1 {
+		font-family: Shindler, serif;
+		font-size: 2rem;
+	}
+
+	hr {
+		margin: 1em 0;
+		padding: 0;
+		border: 1px solid $bg-color;
+		height: 5px;
+		width: 100%;
+	}
+
+	& > * {
+		flex: 1;
+	}
+	.toolbar {
+		display: flex;
+		flex-direction: column;
+		-webkit-border-top-left-radius: 10% !important;
+		.btn-container {
+			border-top-left-radius: $roundness;
+			border-top-right-radius: $roundness;
+			background: $sub-d-color;
+			margin-bottom: 0.1rem;
+		}
+		.collapsibles {
+			background: $sub-d-color;
+			padding: 10px;
+			& > :not(.active) {
+				font-size: 0;
+				margin: 0;
+				opacity: 0;
+				padding: 0;
+				transition: opacity .25s,
+				font-size .5s .25s,
+				margin .5s .25s,
+				padding .5s .25s;
+			}
+			& > .active {
+				border-color: $interact-color;
+				transition: font-size .25s,
+				margin .25s,
+				padding .25s,
+				opacity .5s .25s;
+			}
+		}
+	}
+	.content {
+		display: flex;
+		justify-content: space-evenly;
+		flex-wrap: wrap;
+		background: $sub-d-color;
+		margin-top: 0.1rem;
+		border-bottom-left-radius: $roundness;
+		border-bottom-right-radius: $roundness;
+	}
+}

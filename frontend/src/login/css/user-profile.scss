@@ -1,0 +1,95 @@
+
+#user-profile {
+	padding-top: 20px;
+	margin: 0 auto;
+	max-width: 1050px;
+	.header {
+		display: flex;
+		& > * {
+			flex: 1;
+		}
+		.username {
+
+		}
+	}
+	.profile-info {
+		background: $sub-d-color;
+		min-height: 500px;
+		max-height: 300px;
+		height: 300px;
+		display: grid;
+		grid-template-columns: repeat(3,33.333%);
+		grid-template-rows: 5.5em auto;
+		grid-template-areas:"profile-picture profile-about other"
+                      "profile-picture profile-about other";
+		.profile-picture {
+			grid-area: profile-picture;
+			background: red;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			overflow: hidden;
+			img {
+				flex-shrink: 0;
+				min-width: 100%;
+				min-height: 100%;
+			}
+		}
+		.profile-information {
+			grid-area: profile-about;
+			display: flex;
+			flex-direction: column;
+			background: #0099FF;
+
+			.basic-info {
+				background: rgba(255,255,255,0.1);
+				display: flex;
+				height: 75px;
+				& div {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					flex: 1;
+				}
+			}
+			.seaking-info {
+				background: #e2b714;
+				display: flex;
+				& > * {
+					flex: 1;
+				}
+				& > div {
+					display: flex;
+					flex-direction: column;
+					.gender {
+						flex: 1;
+					}
+					.relation {
+						flex: 1;
+					}
+				}
+			}
+			.additional-info {
+				.flex-table-row {
+					display: flex;
+					padding: 5px;
+					&:nth-child(even) {
+						background: red;
+					}
+					&:nth-child(odd) {
+						background: mediumpurple;
+					}
+					& > strong, & > span {
+						flex: 1;
+					}
+				}
+			}
+		}
+		.other {
+			grid-area: other;
+			background: #7e2a33;
+		}
+	}
+
+}

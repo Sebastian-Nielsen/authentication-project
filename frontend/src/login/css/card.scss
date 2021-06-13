@@ -1,0 +1,26 @@
+
+
+#card {
+	flex: 1 0 195px;
+	max-width: 195px;
+	height: 400px;
+	background: #3b6a78;
+	margin: 0.5rem;
+	border-radius: $roundness;
+
+	display: flex;
+	flex-direction: column;
+
+	.img-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		overflow: hidden;
+		img {
+			border-radius: $roundness $roundness 0 0;
+			flex-shrink: 0;
+			min-width: 100%;
+			min-height: 100%;
+		}
+	}
+}
