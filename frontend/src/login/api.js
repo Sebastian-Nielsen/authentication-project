@@ -1,13 +1,8 @@
 import axios from "axios"
-const production  = 'https://authentication-react-project.herokuapp.com';
-const development = 'http://localhost:5000';
-const hostUrl = (process.env.NODE_ENV === "development" ? development : production );
-console.log("-----------------")
-console.log("HostUrl:", process.env.NODE_ENV, hostUrl, window.location.origin, process.env)
-console.log("-----------------")
+import {HOST_URL} from "./Constants";
 
 const fetchAPI = async (url, method="GET", body=null) => {
-	const response = await fetch(hostUrl + url, {
+	const response = await fetch(HOST_URL + url, {
 		credentials: {withCredentials: true},
 		method,
 		body: body == null ? undefined : JSON.stringify(body)
@@ -23,7 +18,7 @@ const fetchAPI = async (url, method="GET", body=null) => {
 export const getCurrentUser = async () => {
 	console.log("[getCurrentUser_1] Sending request now!")
 	try {
-		const res = await axios.get(hostUrl + "/loginForm/user", { withCredentials: true })
+		const res = await axios.get(HOST_URL + "/loginForm/user", { withCredentials: true })
 		console.log("[getCurrentUser_2:good] Response data.username:", res.data.username, typeof(res.data.username))
 		return res.data.username
 	} catch (err) {
@@ -34,7 +29,7 @@ export const getCurrentUser = async () => {
 
 export const removeAllUsers = async () => {
 try {
-		return await axios.get(hostUrl + "/loginForm/removeAllUsers")
+		return await axios.get(HOST_URL + "/loginForm/removeAllUsers")
 	} catch (err) {
 		return err.response
 	}
@@ -42,7 +37,7 @@ try {
 
 export const insertTenUsers = async (cb) => {
 try {
-		return await axios.get(hostUrl + "/loginForm/insertTenUsers")
+		return await axios.get(HOST_URL + "/loginForm/insertTenUsers")
 	} catch (err) {
 		return err.response
 	}
@@ -50,7 +45,7 @@ try {
 
 export const deleteUser = async (username, cb) => {
 	try {
-		const res = await axios.post(hostUrl + "/loginForm/deleteUser",
+		const res = await axios.post(HOST_URL + "/loginForm/deleteUser",
 				{
 					username: username,
 				},
@@ -66,7 +61,7 @@ export const deleteUser = async (username, cb) => {
  export const login = async (oldUsername, password) => {
 	console.log("[api:login] Sending req with:", oldUsername, password)
 	 try {
-		 return await axios.post(hostUrl + "/loginForm/login",
+		 return await axios.post(HOST_URL + "/loginForm/login",
 				 {
 					 username: oldUsername,
 					 password: password
@@ -86,7 +81,7 @@ export const deleteUser = async (username, cb) => {
 
 export const signup = async (username, email, password) => {
 	try {
-		const test = hostUrl + "/loginForm/signup";
+		const test = HOST_URL + "/loginForm/signup";
 		console.log(test)
 		return await axios.post(test, {
 					email: email,
@@ -101,6 +96,6 @@ export const signup = async (username, email, password) => {
 	}
 }
 export const logout = async (newUsername, password) => {
-	return await axios.get(hostUrl + "/loginForm/logout",
+	return await axios.get(HOST_URL + "/loginForm/logout",
 			{ withCredentials: true })
 }
