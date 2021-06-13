@@ -14,14 +14,15 @@ const Home = () => {
 
 				<section id="home">
 
-
 					<AuthConsumer>
 						{({username}) => {
 							return (
 									<>
+
 										<div className="component">
 											<h1>Home</h1>
 										</div>
+
 										<div id="info" className="component">
 											<h1>Username: {username}</h1>
 											<h4>You have a valid token saved in your browser.</h4>
@@ -35,11 +36,12 @@ const Home = () => {
 											<Link to="/login">
 												<button className="type-2 secondary"> Login </button>
 											</Link>
-											<button className="type-2 secondary" onClick={() => authContext.logout()}> Sign out </button>
+											<button className="type-2 secondary" onClick={authContext.logout}> Sign out </button>
 										</div>
+
 										<div id="registered-users" className="component">
 											<p>Click on a user to remove the user from the database</p>
-											{/*<button className="type-2 secondary" onClick={insertTenUsers}> Insert 10 random users </button>*/}
+											<button className="type-2 secondary" onClick={insertTenUsers}> Insert 10 random users </button>
 											<button className="type-2 secondary" onClick={removeAllUsers}> Remove all users </button>
 											<Resource
 													path="/loginForm/fetchAllDataFromAllUsers"
@@ -67,7 +69,9 @@ const Home = () => {
 													}}
 											/>
 										</div>
+
 									</>
+
 							)
 						}}
 					</AuthConsumer>

@@ -3,39 +3,39 @@ import {AnimatePresence, motion} from "framer-motion"
 
 export const NotifyTypeEnum = Object.freeze({
 	ERROR: {
-		title: "Error",
-		duration: 5000
+		type: "Error",
+		notification_duration: 5000
 	},
 	SUCCESS: "Success",
 	NOTICE: {
-		title: "Notice",
-		duration: 2000
+		type: "Notice",
+		notification_duration: 2000
 	},
 	WARN: {
-		title: "Warning",
-		duration: 2000
+		type: "Warning",
+		notification_duration: 2000
 	}
 })
 export const NotifyEnum = Object.freeze({
 	ERR_INCORRECT_PWD_OR_USERNAME: {
-		type: NotifyTypeEnum.ERROR,
-		msg: "Incorrect password or username"
+		msg: "Incorrect password or username",
+		...(NotifyTypeEnum.ERROR)
 	},
 	ERR_USERNAME_IS_ALREADY_TAKEN: {
-		type: NotifyTypeEnum.ERROR,
-		msg: "Username is already registered"
+		msg: "Username is already registered",
+		...(NotifyTypeEnum.ERROR)
 	},
 	ERR_EMAIL_IS_ALREADY_IN_USE: {
-		type: NotifyTypeEnum.ERROR,
-		msg: "Email is already in use"
+		msg: "Email is already in use",
+		...(NotifyTypeEnum.ERROR)
 	},
 	NOTICE_PWDS_DO_NOT_MATCH: {
-		type: NotifyTypeEnum.NOTICE,
-		msg: "Passwords do not match"
+		msg: "Passwords do not match",
+		...(NotifyTypeEnum.NOTICE)
 	},
 	WARN_NOT_AUTHENTICATED: {
-		type: NotifyTypeEnum.WARN,
-		msg: "You are not authenticated. Please sign in."
+		msg: "You are not authenticated. Please sign in.",
+		...(NotifyTypeEnum.WARN)
 	}
 })
 
@@ -141,7 +141,7 @@ const Notifications = (props) => {
 													<img src={window.location.origin + '/times.svg'} alt=""/>
 												</div>
 												<div className="message">
-													<div className="title">{notif.title}</div>
+													<div className="title">{}</div>
 													{notif.msg} ({notif.id})
 												</div>
 											</motion.div>

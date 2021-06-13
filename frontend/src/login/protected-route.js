@@ -1,5 +1,5 @@
 import React, {useContext} from "react"
-import {Route, useHistory} from "react-router";
+import {Redirect, Route, useHistory} from "react-router";
 import {AuthContext, AuthEnum } from "./auth";
 import Nav from "./Nav"
 import {motion} from "framer-motion";
@@ -32,15 +32,8 @@ const ProtectedRoute = ({component: Component, ...rest }) => {
 					<h1>Attempting to authenticate session</h1>
 				</motion.div>
 		)
-	else if (authContext.isAuthenticated === AuthEnum.UNAUTHENTICATED) {
-		console.log("You are not authenticated1")
-		console.log("You are not authenticated2")
-		console.log("You are not authenticated3")
-		return <Login/>;
-		// notifContext.createNotification(NotifyEnum.WARN_NOT_AUTHENTICATED)
-		// notifContext.createNotification(NotifyEnum.NOTICE_PWDS_DO_NOT_MATCH)
-	}
-	console.log("Is authenticatd as12")
+	else if (authContext.isAuthenticated === AuthEnum.UNAUTHENTICATED)
+		return <Redirect to="/login"/>
 
 	return (
 			<>
