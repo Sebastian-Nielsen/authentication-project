@@ -38,8 +38,14 @@ def login():
 	print(user)
 	return User().login(user)
 
-@loginForm_blueprint.route("/logout", methods=["get, delete"])
+@loginForm_blueprint.route("/logout", methods=["get", "delete"])
 def logout():
+	print("[get to /signout]")
+	print("[get to /signout]")
+	print("[get to /signout]")
+	print("[get to /signout]")
+	print("[get to /signout]")
+	print("[get to /signout]")
 	print("[get to /signout]")
 	return User().logout()
 

@@ -10,6 +10,10 @@ export const NotifyTypeEnum = Object.freeze({
 	NOTICE: {
 		title: "Notice",
 		duration: 2000
+	},
+	WARN: {
+		title: "Warning",
+		duration: 2000
 	}
 })
 export const NotifyEnum = Object.freeze({
@@ -28,17 +32,12 @@ export const NotifyEnum = Object.freeze({
 	NOTICE_PWDS_DO_NOT_MATCH: {
 		type: NotifyTypeEnum.NOTICE,
 		msg: "Passwords do not match"
+	},
+	WARN_NOT_AUTHENTICATED: {
+		type: NotifyTypeEnum.WARN,
+		msg: "You are not authenticated. Please sign in."
 	}
 })
-// export const createNotification = (notifyEnum) => {
-// 	const id = new Date().getSeconds()
-// 	return {
-// 		id: id,
-// 		title: notifyEnum.type.title,
-// 		duration: notifyEnum.type.duration,
-// 		msg: notifyEnum.msg
-// 	}
-// }
 
 export const NotificationContext = createContext({});
 

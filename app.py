@@ -30,9 +30,7 @@ print("--------------------")
 
 @app.before_request
 def make_session_permanent():
-	print(">>>>>>>>>>>>>>>>>>>>")
 	print("[app.before_request] session:", session)
-	print("<<<<<<<<<<<<<<<<<<<<")
 	session.permanent = True
 
 # Serve React App

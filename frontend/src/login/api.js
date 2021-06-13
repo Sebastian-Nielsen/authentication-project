@@ -98,6 +98,6 @@ export const signup = async (username, email, password) => {
 	}
 }
 export const logout = async (newUsername, password) => {
-	await axios.get("http://localhost:5000/loginForm/logout",
+	return await axios.get("http://localhost:5000/loginForm/logout",
 			{ withCredentials: true })
 }

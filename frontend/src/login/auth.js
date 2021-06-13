@@ -63,7 +63,12 @@ export default class AuthProvider extends React.Component {
 	}
 
 	logout = async () => {
-		await API.logout()
+		const res = await API.logout();
+		console.log("logout res 1:")
+		console.log("logout res 2:")
+		console.log("logout res 3:")
+		console.log("logout res 4:")
+		console.log(res);
 		this.setState({ username: null, isAuthenticated: AuthEnum.UNAUTHENTICATED })
 	}
 
