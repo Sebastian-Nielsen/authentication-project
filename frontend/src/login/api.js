@@ -1,5 +1,5 @@
 import axios from "axios"
-const production  = 'https://authentication-react-project.herokuapp.com/';
+const production  = 'https://authentication-react-project.herokuapp.com';
 const development = 'http://localhost:5000';
 const hostUrl = (process.env.NODE_ENV === "development" ? development : production );
 console.log("-----------------")

@@ -60,14 +60,7 @@ def insertTenUsers():
 def current_user():
 # 	from time import sleep
 # 	sleep(1)
-	print()
-	print()
-	print()
-	print("[/user GET]")
-	print(session)
-	print()
-	print()
-	print()
+	print("[/user GET] session:", session)
 	user = User().getUser()
 	return user
 
