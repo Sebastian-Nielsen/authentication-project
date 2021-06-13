@@ -7,7 +7,6 @@ import {Link, useHistory} from "react-router-dom";
 import {Notifications, NotificationContext, NotifyEnum} from "./Notifications";
 
 import {LoginMonkeySvg} from "./svg/LoginMonkeySvg"
-import loginImg from "../Background.svg"
 
 const Login = () => {
 	const history = useHistory()

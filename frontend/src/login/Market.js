@@ -1,5 +1,4 @@
 import {Component} from "react";
-import { Card } from "./Card";
 
 
 export default class Market extends Component {
