@@ -1,11 +1,9 @@
-import {Component, useCallback, useContext, useState} from "react";
-import {AuthConsumer, AuthContext} from "./auth";
-import {AnimatePresence, motion} from "framer-motion"
-import Nav from "./Nav"
-import Resource from "./Resource"
+import {useContext} from "react";
+import {AuthConsumer, AuthContext} from "../components/auth";
+import {AnimatePresence} from "framer-motion"
+import UserInfoTable from "./userInfoTable"
 import {Link} from "react-router-dom";
-import {deleteUser, insertTenUsers, removeAllUsers} from "./api";
-import {useHistory} from "react-router";
+import {insertTenUsers, removeAllUsers} from "../components/api";
 
 const Home = () => {
 	const authContext = useContext(AuthContext)
@@ -43,31 +41,7 @@ const Home = () => {
 											<button className="type-2 secondary" onClick={insertTenUsers}> Insert 10 random users </button>
 											<button className="type-2 secondary" onClick={removeAllUsers}> Remove all users </button>
 											<p>Click on a user to remove the user from the database</p>
-											<Resource
-													path="/loginForm/fetchAllDataFromAllUsers"
-													render={data => {
-														if (data.isLoading) return <h3>Data is loading ..</h3>
-														if (data.err === undefined) return <h3>Error: {JSON.stringify(data)}</h3>
-														return <table>
-															<tbody>
-															<tr>
-																<th>Username</th>
-																<th>Password</th>
-																<th>email</th>
-															</tr>
-															{data.payload.map(user =>
-																	<motion.tr onClick={e => deleteUser(user.username, () => e.target.parentElement.remove())} key={user.username}
-																	           exit={{ scale: 0.2 }}
-																	>
-																		<td>{user.username}</td>
-																		<td>{user.unecrypted_password}</td>
-																		<td>{user.email}</td>
-																	</motion.tr>
-															)}
-															</tbody>
-														</table>
-													}}
-											/>
+											<UserInfoTable/>
 										</div>
 
 									</>

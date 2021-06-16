@@ -47,7 +47,6 @@ export default class NotificationsProvider extends Component {
 		notifications: []
 	}
 	createNotification = notifyEnum => {
-		console.log(notifyEnum)
 		NotificationsProvider.#notifId++;
 		console.log("[createNotification] -----")
 		console.log("[createNotification] Type:", notifyEnum.type)
@@ -56,7 +55,7 @@ export default class NotificationsProvider extends Component {
 		console.log("[createNotification] id:", NotificationsProvider.#notifId)
 		console.log("[createNotification] -----")
 
-		const notifId = NotificationsProvider.#notifId // this line is necessary for some reason
+		const notifId = NotificationsProvider.#notifId
 		setTimeout(() => this.removeNotifBy(notifId), notifyEnum.notification_duration)
 
 		const newNotif = {
@@ -67,27 +66,16 @@ export default class NotificationsProvider extends Component {
 		this.setState(prevState => ({
 			notifications: [...prevState.notifications, newNotif]
 		}))
-		console.log(this.state.notifications)
-
 	}
 
-	// addNotif = notifyEnum => {
-	// 	const newNotif = this.createNotification(notifyEnum)
-	// 	this.setState(prevState => ({
-	// 		notifications: [...prevState.notifications, newNotif]
-	// 	}))
-	// }
 	removeNotifBy = id => {
 		const indexOfId = this.state.notifications.findIndex(notif => {
 			return notif.id === id
 		})
 		const idIsPresentInNotifications = indexOfId !== -1
 
-		if (!idIsPresentInNotifications) {
-			console.log("id is not present in notifications-arr, ", id)
+		if (!idIsPresentInNotifications)
 			return
-		}
-		console.log("id is present in notifications-arr, ", id)
 
 		this.setState(prevState => {
 			const copy = [...prevState.notifications]
@@ -95,6 +83,7 @@ export default class NotificationsProvider extends Component {
 			return {notifications: copy}
 		})
 	}
+
 	removeNotifAt = index => {
 		this.setState(prevState => {
 			const copy = [...prevState.notifications]
@@ -107,7 +96,6 @@ export default class NotificationsProvider extends Component {
 		return (
 				<NotificationContext.Provider value={{
 					notifications: this.state.notifications,
-					// add: this.addNotif,
 					removeNotifAt: this.removeNotifAt, // ... at index
 					removeNotifBy: this.removeNotifBy, // ... by id
 					createNotification: this.createNotification
@@ -118,40 +106,3 @@ export default class NotificationsProvider extends Component {
 	}
 }
 
-
-const Notifications = (props) => {
-
-	return (
-			<AnimatePresence>
-				<NotificationContext.Consumer>
-					{({notifications, removeNotifAt, removeNotifBy}) =>
-
-							<div id="notificationCenter">
-								{notifications.map((notif, index) =>
-
-											<motion.div className={`notif ${notif.type.toLowerCase()}`} key={notif.id} //key={Math.floor(1+Math.random() * 10000)}
-											            onClick={() => removeNotifAt(index)}
-											            // onClick={e => e.currentTarget.remove()}
-											            // onClick={() => removeNotifBy(notif.id)}
-											            initial={{ scale: 0.5, x: "-200px" }}
-											            animate={{ scale: 1,   x: 0        }}
-											            exit={{ scale: 0.1, x: "-200px" }}
-											>
-												<div className="icon">
-													<img src={window.location.origin + '/times.svg'} alt=""/>
-												</div>
-												<div className="message">
-													<div className="title">{}</div>
-													{notif.msg} ({notif.id})
-												</div>
-											</motion.div>
-								)}
-							</div>
-
-					}
-				</NotificationContext.Consumer>
-			</AnimatePresence>
-	)
-}
-
-export {Notifications}

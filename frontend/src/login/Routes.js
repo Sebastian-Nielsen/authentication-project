@@ -1,18 +1,16 @@
 import React from "react";
-import {BrowserRouter, Route, Switch, useLocation} from "react-router-dom";
+import {Route, Switch, useLocation} from "react-router-dom";
 import {AnimatePresence} from "framer-motion";
 
 import Register from "./Register";
-import Login from "./Login";
-import AuthProvider from "./auth";
-import About from "./About";
-import Dashboard from "./Dashboard";
-import ProtectedRoute from "./protected-route";
-import Home from "./Home";
-// import { User } from "./User"
-import NotificationsProvider from "./Notifications";
-import { Blank } from "./Blank"
-import Nav from "./Nav"
+import Login from "./containers/Login";
+import AuthProvider from "./components/auth";
+import About from "./containers/About";
+import Dashboard from "./containers/Dashboard";
+import ProtectedRoute from "./components/protected-route";
+import Home from "./containers/Home";
+import NotificationsProvider from "./components/Notifications";
+import { Blank } from "./containers/Blank"
 
 
 
@@ -21,7 +19,7 @@ const Routes = () => {
 	return (
 			<NotificationsProvider>
 				<AuthProvider>
-					<AnimatePresence exitBeforeEnter initial={true}>  {/* Instead of Switch so that we get animations */}
+					<AnimatePresence exitBeforeEnter initial={true}>
 						<Switch location={location} key={location.pathname}>
 
 							<ProtectedRoute exact path="/" component={Home}/>

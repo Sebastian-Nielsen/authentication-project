@@ -1,19 +1,18 @@
 import axios from "axios"
-import {HOST_URL} from "./Constants";
+import {HOST_URL} from "../Constants";
 
 const fetchAPI = async (url, method="GET", body=null) => {
-	const response = await fetch(HOST_URL + url, {
-		credentials: {withCredentials: true},
-		method,
-		body: body == null ? undefined : JSON.stringify(body)
-	})
-	const json = await response.json();
-
-	if (response.status !== 200)
-		console.error(response.message)
-
-	return json
-}
+	try {
+		const response = await axios(method, HOST_URL + url, {
+			body: body == null ? undefined : body,
+			credentials: {withCredentials: true}
+		})
+		return response.data
+	} catch (err) {
+		console.log("[fetchApi:ERROR]")
+		return err.response
+	}
+}              //    TODO:  A lot of duplicate code, refactor this
 
 export const getCurrentUser = async () => {
 	console.log("[getCurrentUser_1] Sending request now!")

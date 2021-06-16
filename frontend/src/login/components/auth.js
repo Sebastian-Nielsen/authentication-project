@@ -1,5 +1,4 @@
 import React from "react"
-// import axios from "axios";
 import * as API from "./api";
 import {NotificationContext} from "./Notifications";
 
@@ -21,9 +20,8 @@ export default class AuthProvider extends React.Component {
 	}
 
 	async componentDidMount() { // If the browser has a session stored, the server will see and return the user
-		console.log("[auth:componentDidMount:1] Calling 'getCurrentUser'")
 		const username = await API.getCurrentUser()
-		console.log("[auth:componentDidMount:2] AuthProvider has gotten the username: ", this.state.username)
+
 		if (username)
 			this.setState({ username: username, isAuthenticated: AuthEnum.AUTHENTICATED })
 		else
@@ -31,10 +29,7 @@ export default class AuthProvider extends React.Component {
 	}
 
 	signup = async (newUsername, email, password, successCb = () => {}) => {
-		console.log("[auth:signup] Received ", newUsername, email, password)
-
 		const res = await API.signup(newUsername, email, password)
-
 
 		if (res.status !== 200) {
 			this.context.createNotification(res.data)
@@ -47,10 +42,8 @@ export default class AuthProvider extends React.Component {
 	}
 
 	login = async (oldUsername, password, successCb = () => {}) => {
-		console.debug(`[auth:login] ${oldUsername}, ${password}`)
-
 		const res = await API.login(oldUsername, password)
-		console.log("[auth:login] res.status:", res.status)
+
 		if (res.status !== 200) {
 			this.context.createNotification(res.data)
 			this.setState({isAuthenticated: AuthEnum.UNAUTHENTICATED})
@@ -63,12 +56,7 @@ export default class AuthProvider extends React.Component {
 	}
 
 	logout = async () => {
-		const res = await API.logout();
-		console.log("logout res 1:")
-		console.log("logout res 2:")
-		console.log("logout res 3:")
-		console.log("logout res 4:")
-		console.log(res);
+		await API.logout();
 		this.setState({ username: null, isAuthenticated: AuthEnum.UNAUTHENTICATED })
 	}
 
@@ -78,7 +66,6 @@ export default class AuthProvider extends React.Component {
 
 	render() {
 		return (
-
 				<AuthContext.Provider
 					value={{
 						username: this.state.username,
