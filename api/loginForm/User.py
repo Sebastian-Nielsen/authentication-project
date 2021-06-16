@@ -27,8 +27,6 @@ class User:
 		return userData, 200
 
 	def login(self, formData):
-		from time import sleep
-# 		sleep(2)
 		print("[login] formData:", formData)
 
 		user = userDataCollection.find_one(formData['username'])
@@ -36,17 +34,14 @@ class User:
 		if user and pbkdf2_sha256.verify(formData['password'], user['password']):
 			return self.startSession(user)
 
-# 		print(RESPONSES["ERR_INCORRECT_PWD_OR_USERNAME"])
 		return RESPONSES["ERR_INCORRECT_PWD_OR_USERNAME"]
 
 	def signup(self, user):
-# 		userDataCollection.remove({}) # Remove this, FixMe: )=#¤=)(=¤()!
 		print(f"[signup] data received: {user}")
 
 		user["unecrypted_password"] = user["password"]
 		user["password"] = pbkdf2_sha256.encrypt(user["password"])
 		user["_id"] = user["username"] # Set primary key
-
 
 		if self.__isEmailAlreadyRegistered(user['email']):
 			return RESPONSES["ERR_EMAIL_IS_ALREADY_REGISTERED"]
@@ -63,9 +58,7 @@ class User:
 		return userDataCollection.find_one({'email': email}) != None
 
 	def logout(self):
-		print("--------------------")
 		print("[logout] session data received:", session)
-		print("--------------------")
 		del session['username']
 		if 'username' in session:
 			del session['username']
@@ -90,7 +83,7 @@ class User:
 			return res
 
 	def delete(self, username):
-		result = userDataCollection.remove(username)
+		userDataCollection.remove(username)
 
 	def __checkPassword(self, pswrd):
 		pass

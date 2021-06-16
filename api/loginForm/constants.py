@@ -1,4 +1,4 @@
-from flask import Response
+from flask import Response, jsonify
 from json import dumps    # Used to convert a json object into a string
 RESPONSE_TYPE = {
 	"ERROR": {
@@ -14,7 +14,6 @@ RESPONSE_TYPE = {
 		"notification_duration": 2000
 	}
 }
-from flask import jsonify
 RESPONSES = {
 	"ERR_INCORRECT_PWD_OR_USERNAME": Response(
 		dumps({

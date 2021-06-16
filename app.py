@@ -21,10 +21,8 @@ app.register_blueprint(loginForm_blueprint, url_prefix="/loginForm")
 
 print("--------------------")
 print("--------------------")
-print("--------------------")
 print("Backend Server up and running.")
 print("Secret key:", app.secret_key)
-print("--------------------")
 print("--------------------")
 print("--------------------")
 
@@ -37,12 +35,8 @@ def make_session_permanent():
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def serve(path):
-	print("%%%%%")
-	print(f"path: {path}")
-	print("%%%%%")
-	if path != "" and os.path.exists(app.static_folder + '/' + path):#(app.static_folder + '/').endswith(path):
-		print("IF CASE")
+	print(f"> Serving path: {path}")
+	if path != "" and os.path.exists(app.static_folder + '/' + path):
 		return send_from_directory(app.static_folder, path)
 	else:
-		print("IF ELSE")
 		return send_from_directory(app.static_folder, 'index.html')
