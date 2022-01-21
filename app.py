@@ -35,6 +35,7 @@ def make_session_permanent():
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def serve(path):
+	print("static_folder:", app.static_folder, app.static_folder + '/' + path, os.path.exists(app.static_folder + '/' + path))
 	print(f"> Serving path: {path}")
 	if path != "" and os.path.exists(app.static_folder + '/' + path):
 		return send_from_directory(app.static_folder, path)
